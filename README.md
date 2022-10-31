@@ -1,6 +1,5 @@
-### Simple Google Chrome extension for scraping page(s) of ranobe into .epub format
+# Simple Google Chrome extension for scraping page(s) of ranobe into .epub format
 
+## Boilerplate
 
-# TODO
-
-remove "tabs" permission
+This tool using [@samuelsimoes/chrome-extension-webpack-boilerplate](https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate).

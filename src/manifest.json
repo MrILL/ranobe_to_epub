@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "RanobeToEpub",
+  "description": "Convert pages of ranobe web-sites to epub format. TBD multiple pages to one file",
+  "version": "0.1",
+  "permissions": ["downloads", "tabs"],
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.bundle.js"
+  },
+  "content_scripts": [{
+      "js": ["contentRanobelib.bundle.js"],
+      "matches": ["https://ranobelib.me/*/v1/*"]
+    },
+    {
+      "js": ["contentRanobeHub.bundle.js"],
+      "matches": ["https://ranobes.com/chapters/*"]
+    },
+    {
+      "matches": ["http://*/*", "https://*/*", "<all_urls>"],
+      "js": ["contentScript.bundle.js"],
+      "css": ["content.styles.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon-34.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "devtools_page": "devtools.html",
+  "web_accessible_resources": [{
+    "resources": ["content.styles.css", "icon-128.png", "icon-34.png"],
+    "matches": []
+  }]
+}
